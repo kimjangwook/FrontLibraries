@@ -21,8 +21,9 @@
 	let secondaryColor = true;
 
 	let showNavigation: boolean = false;
-	let active: string = '/';
+	let active: string = `${base}/`;
 	function setActive(path: string) {
+		console.log(path);
 		active = path;
 		goto(path);
 		showNavigation = false;
@@ -54,12 +55,15 @@
 			</Header>
 			<Content>
 				<List>
-					<Item on:click={() => setActive('/')} activated={active === '/'}>
+					<Item on:click={() => setActive(`${base}/`)} activated={active === `${base}/`}>
 						<Text>Home</Text>
 					</Item>
 				</List>
 				<List>
-					<Item on:click={() => setActive('/csv2json')} activated={active === '/csv2json'}>
+					<Item
+						on:click={() => setActive(`${base}/csv2json`)}
+						activated={active === `${base}/csv2json`}
+					>
 						<Text>CSV2JSON</Text>
 					</Item>
 				</List>
