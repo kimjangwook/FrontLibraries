@@ -30,7 +30,6 @@
 				return;
 			}
 			const file = input.files[0];
-			console.log(file);
 
 			const reader = new FileReader();
 			reader.onload = async function () {
@@ -41,7 +40,6 @@
 					output: 'json',
 					trim: true
 				}).fromString(text?.toString() || '');
-				console.log(json);
 
 				const now = getNow();
 				const jsonName = file.name.replace('.csv', `_${now}.json`);
@@ -51,6 +49,10 @@
 		}
 	}
 </script>
+
+<svelte:head>
+	<title>CSV2JSON|JW-FrontLibraries</title>
+</svelte:head>
 
 <h1>CSV2JSON</h1>
 

@@ -23,12 +23,15 @@
 	let showNavigation: boolean = false;
 	let active: string = `${base}/`;
 	function setActive(path: string) {
-		console.log(path);
 		active = path;
 		goto(path);
 		showNavigation = false;
 	}
 </script>
+
+<svelte:head>
+	<title>JW-FrontLibraries</title>
+</svelte:head>
 
 <div class="flexy">
 	<div class="top-app-bar-container flexor">
@@ -86,18 +89,7 @@
 	.top-app-bar-container {
 		margin-right: 0;
 	}
-
-	.flexy {
-		display: flex;
-		flex-wrap: wrap;
-	}
-
-	.flexor {
-		display: inline-flex;
-		flex-direction: column;
-	}
-
 	.flexor-content {
-		padding: 0 20px;
+		padding: 20px;
 	}
 </style>

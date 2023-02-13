@@ -24,3 +24,15 @@ a {
 a:visited {
 	color: color.scale(#40b3ff, $lightness: -35%);
 }
+
+.card-list {
+	width: 100%;
+}
+
+.card-list-item {
+	transition: 0.3s;
+	border: 1px solid #e0e0e0 !important;
+}
+.card-list-item:hover {
+	background-color: #ececec;
+}
