@@ -7,10 +7,10 @@
 	<meta name="viewport" content="width=device-width" />
 	<meta http-equiv="content-security-policy" content="">
 		<link href="./_app/immutable/assets/_layout-a7123531.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/start-c01f6dea.js">
+		<link rel="modulepreload" href="./_app/immutable/start-b831d240.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index-d6055ced.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/singletons-86694fce.js">
-		<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-2c498ea8.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-994f6338.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/Ripple-9513ab24.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/navigation-821788d6.js">
 		<link rel="modulepreload" href="./_app/immutable/modules/pages/_layout.ts-5612100c.js">
@@ -27,6 +27,10 @@
 	<!-- SMUI Styles -->
 	<link rel="stylesheet" href="./smui.css" media="(prefers-color-scheme: light)" />
 	<link rel="stylesheet" href="./smui-dark.css" media="screen and (prefers-color-scheme: dark)" />
+
+	<!-- head content -->
+	<!-- Deferred CSS loading (recommended) -->
+	<link rel="stylesheet" href="./css/cookieconsent.css" media="print" onload="this.media='all'">
 
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-EP6HEMNHYS"></script>
@@ -50,7 +54,7 @@
 <header class="mdc-top-app-bar smui-top-app-bar--static smui-top-app-bar--color-secondary" style=""><div class="mdc-top-app-bar__row"><section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"><button class="material-icons mdc-icon-button mdc-icon-button--display-flex mdc-top-app-bar__navigation-icon" style=""><div class="mdc-icon-button__ripple"></div>
   menu
 					</button>
-					<span class="mdc-top-app-bar__title">FrontLibraries</span>
+					<span class="mdc-top-app-bar__title"><li class="mdc-deprecated-list-item" style="" aria-disabled="false" tabindex="-1"><span class="mdc-deprecated-list-item__ripple"></span>FrontLibraries</li></span>
 </section></div>
 </header>
 
@@ -71,14 +75,14 @@
 </div>
 
 
-		<script type="module" data-sveltekit-hydrate="fr0kcd">
-			import { start } from "./_app/immutable/start-c01f6dea.js";
+		<script type="module" data-sveltekit-hydrate="15uy2yz">
+			import { start } from "./_app/immutable/start-b831d240.js";
 
 			start({
 				assets: "",
 				env: {},
-				target: document.querySelector('[data-sveltekit-hydrate="fr0kcd"]').parentNode,
-				version: "1676270923000",
+				target: document.querySelector('[data-sveltekit-hydrate="15uy2yz"]').parentNode,
+				version: "1676511855704",
 				hydrate: {
 					node_ids: [0, 2],
 					data: [null,null],
@@ -88,6 +92,10 @@
 			});
 		</script>
 	</div>
+
+	<!-- body content -->
+	<script defer src="./js/cookieconsent.js"></script><!-- body content -->
+	<script defer src="./js/cookieconsent-init.js"></script>
 </body>
 
 </html>
