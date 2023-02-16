@@ -23,6 +23,8 @@
 		"@smui/form-field": "^7.0.0-beta.0",
 		"@smui/icon-button": "^7.0.0-beta.0",
 		"@smui/list": "^7.0.0-beta.0",
+		"@smui/snackbar": "^7.0.0-beta.0",
+		"@smui/textfield": "^7.0.0-beta.0",
 		"@smui/top-app-bar": "^7.0.0-beta.0",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/adapter-static": "^2.0.0",
@@ -43,6 +45,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"csvtojson": "^2.0.10"
+		"csvtojson": "^2.0.10",
+		"vanilla-cookieconsent": "^2.8.9"
 	}
 }

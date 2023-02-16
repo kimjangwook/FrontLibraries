@@ -18,6 +18,10 @@
 	<link rel="stylesheet" href="%sveltekit.assets%/smui.css" media="(prefers-color-scheme: light)" />
 	<link rel="stylesheet" href="%sveltekit.assets%/smui-dark.css" media="screen and (prefers-color-scheme: dark)" />
 
+	<!-- head content -->
+	<!-- Deferred CSS loading (recommended) -->
+	<link rel="stylesheet" href="%sveltekit.assets%/css/cookieconsent.css" media="print" onload="this.media='all'">
+
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-EP6HEMNHYS"></script>
 	<script>
@@ -31,6 +35,10 @@
 
 <body data-sveltekit-preload-data="hover">
 	<div style="display: contents">%sveltekit.body%</div>
+
+	<!-- body content -->
+	<script defer src="%sveltekit.assets%/js/cookieconsent.js"></script><!-- body content -->
+	<script defer src="%sveltekit.assets%/js/cookieconsent-init.js"></script>
 </body>
 
 </html>

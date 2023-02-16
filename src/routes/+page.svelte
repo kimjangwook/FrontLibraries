@@ -7,8 +7,13 @@
 		{
 			name: 'CSV2JSON',
 			description: 'Convert a CSV file to a JSON File',
-			src: `${base}/images/csv2json.png`,
 			href: `${base}/csv2json`
+		},
+
+		{
+			name: 'IMG2BASE64',
+			description: 'Convert a Image file to a Base64 String',
+			href: `${base}/img2base64`
 		}
 	];
 </script>

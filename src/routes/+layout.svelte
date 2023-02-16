@@ -15,6 +15,7 @@
 	import IconButton from '@smui/icon-button';
 	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
+	import { onMount } from 'svelte';
 
 	let prominent = false;
 	let dense = false;
@@ -27,6 +28,14 @@
 		goto(path);
 		showNavigation = false;
 	}
+
+	onMount(() => {
+		if (browser) {
+			const path = window.location.pathname;
+			console.log(path);
+			active = path;
+		}
+	});
 </script>
 
 <svelte:head>
@@ -46,7 +55,7 @@
 					<IconButton class="material-icons" on:click={() => (showNavigation = !showNavigation)}>
 						menu
 					</IconButton>
-					<Title>FrontLibraries</Title>
+					<Title><Item on:click={() => setActive(`${base}/`)}>FrontLibraries</Item></Title>
 				</Section>
 			</Row>
 		</TopAppBar>
@@ -59,15 +68,23 @@
 			<Content>
 				<List>
 					<Item on:click={() => setActive(`${base}/`)} activated={active === `${base}/`}>
-						<Text>Home</Text>
+						<Text>HOME</Text>
 					</Item>
 				</List>
 				<List>
 					<Item
-						on:click={() => setActive(`${base}/csv2json`)}
-						activated={active === `${base}/csv2json`}
+						on:click={() => setActive(`${base}/csv2json/`)}
+						activated={active === `${base}/csv2json/`}
 					>
 						<Text>CSV2JSON</Text>
+					</Item>
+				</List>
+				<List>
+					<Item
+						on:click={() => setActive(`${base}/img2base64/`)}
+						activated={active === `${base}/img2base64/`}
+					>
+						<Text>IMG2BASE64</Text>
 					</Item>
 				</List>
 			</Content>
