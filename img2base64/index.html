@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width" />
 	<meta http-equiv="content-security-policy" content="">
 		<link href="../_app/immutable/assets/_layout-a7123531.css" rel="stylesheet">
-		<link href="../_app/immutable/assets/_page-42875107.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/_page-a081929b.css" rel="stylesheet">
 		<link rel="modulepreload" href="../_app/immutable/start-ec4a7102.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index-9ea483ac.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/singletons-723bf56a.js">
@@ -18,8 +18,8 @@
 		<link rel="modulepreload" href="../_app/immutable/chunks/navigation-c06983a4.js">
 		<link rel="modulepreload" href="../_app/immutable/modules/pages/_layout.ts-5612100c.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/_layout-79cb23d1.js">
-		<link rel="modulepreload" href="../_app/immutable/components/pages/csv2json/_page.svelte-dde2bc72.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/Button-3615b3e2.js"><title>CSV2JSON|JW-FrontLibraries</title><!-- HEAD_svelte-1kpt68g_START --><!-- HEAD_svelte-1kpt68g_END --><!-- HEAD_svelte-1azmwck_START --><!-- HEAD_svelte-1azmwck_END -->
+		<link rel="modulepreload" href="../_app/immutable/components/pages/img2base64/_page.svelte-d24b4d4e.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/Button-3615b3e2.js"><title>IMG2BASE64|JW-FrontLibraries</title><!-- HEAD_svelte-1kpt68g_START --><!-- HEAD_svelte-1kpt68g_END --><!-- HEAD_svelte-1hcu9c_START --><!-- HEAD_svelte-1hcu9c_END -->
 
 	<!-- Material Icons -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
@@ -71,25 +71,45 @@
 		<div class="mdc-drawer-scrim smui-drawer-scrim__absolute"></div></div>
 	<div class="flexor-content svelte-x5k81b">
 
-<h1>CSV2JSON</h1>
+<h1>IMG2BASE64</h1>
 
-<section class="grid-1 svelte-gxeqap"><label for="csv"><input id="csv" type="file" name="csv" accept=".csv"></label>
+<section class="grid-1 svelte-1xndx7k"><label for="csv"><input id="csv" type="file" name="image_file"></label>
+
+	<img id="my-image" src="" alt="" class="svelte-1xndx7k">
+
+	<div style="display: flex; justify-content: end;"><button class="mdc-button" style="" disabled><div class="mdc-button__ripple"></div>
+  <span class="mdc-button__label">Copy</span></button></div>
+	<label class="mdc-text-field mdc-text-field--textarea mdc-text-field--outlined" style="width: 100%;" readonly>
+    <div class="mdc-notched-outline"><div class="mdc-notched-outline__leading"></div>
+  <div class="mdc-notched-outline__notch" style=""><span class="mdc-floating-label" style="">Result</span></div>
+  <div class="mdc-notched-outline__trailing"></div>
+</div>
+    
+    
+    <span class="mdc-text-field__resizer"><textarea class="mdc-text-field__input" style=""></textarea>
+        </span>
+    
+    </label>
+
+
 	<div><button class="mdc-button mdc-button--unelevated" style=""><div class="mdc-button__ripple"></div>
-  <span class="mdc-button__label">Convert &amp; Download</span></button></div>
-</section></div>
+  <span class="mdc-button__label">Convert</span></button></div></section>
+
+<aside class="mdc-snackbar"><div class="mdc-snackbar__surface" role="status" aria-relevant="additions"><span class="mdc-snackbar__label" aria-atomic="false">COPIED</span></div>
+</aside></div>
 </div>
 
 
-		<script type="module" data-sveltekit-hydrate="16vlv14">
+		<script type="module" data-sveltekit-hydrate="m408aw">
 			import { start } from "../_app/immutable/start-ec4a7102.js";
 
 			start({
 				assets: "",
 				env: {},
-				target: document.querySelector('[data-sveltekit-hydrate="16vlv14"]').parentNode,
+				target: document.querySelector('[data-sveltekit-hydrate="m408aw"]').parentNode,
 				version: "1676546577758",
 				hydrate: {
-					node_ids: [0, 3],
+					node_ids: [0, 4],
 					data: [null,null],
 					form: null,
 					error: null
