@@ -2,6 +2,8 @@
 	import { goto } from '$app/navigation';
 	import { base } from '$app/paths';
 	import List, { Item, Graphic, Meta, Text, PrimaryText, SecondaryText } from '@smui/list';
+	import { onMount } from 'svelte';
+	import { activePath } from '../lib/store';
 
 	let options = [
 		{
@@ -16,6 +18,10 @@
 			href: `${base}/img2base64`
 		}
 	];
+
+	onMount(() => {
+		activePath.set(`${base}/`);
+	});
 </script>
 
 <h1>仕事に使えるライブラリーのまとめ</h1>

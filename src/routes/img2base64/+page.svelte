@@ -2,6 +2,9 @@
 	import Button, { Label } from '@smui/button';
 	import Textfield from '@smui/textfield';
 	import Snackbar, { Actions, Label as SLabel } from '@smui/snackbar';
+	import { onMount } from 'svelte';
+	import { activePath } from '../../lib/store';
+	import { base } from '$app/paths';
 
 	let result = '';
 	let snackbarWithoutClose: Snackbar;
@@ -28,6 +31,10 @@
 		navigator.clipboard.writeText(result);
 		snackbarWithoutClose?.open();
 	}
+
+	onMount(() => {
+		activePath.set(`${base}/img2base64/`);
+	});
 </script>
 
 <svelte:head>

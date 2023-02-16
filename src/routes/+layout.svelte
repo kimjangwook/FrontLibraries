@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { activePath } from './../lib/store';
 	import { base } from '$app/paths';
 	import TopAppBar, { Row, Section, Title } from '@smui/top-app-bar';
 
@@ -10,12 +11,10 @@
 		Subtitle,
 		Scrim
 	} from '@smui/drawer';
-	import List, { Item, Text, Graphic, Separator, Subheader } from '@smui/list';
+	import List, { Item, Text } from '@smui/list';
 
 	import IconButton from '@smui/icon-button';
-	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
-	import { onMount } from 'svelte';
 
 	let prominent = false;
 	let dense = false;
@@ -23,19 +22,13 @@
 
 	let showNavigation: boolean = false;
 	let active: string = `${base}/`;
+	activePath.subscribe((value: string) => {
+		active = value;
+	});
 	function setActive(path: string) {
-		active = path;
 		goto(path);
 		showNavigation = false;
 	}
-
-	onMount(() => {
-		if (browser) {
-			const path = window.location.pathname;
-			console.log(path);
-			active = path;
-		}
-	});
 </script>
 
 <svelte:head>

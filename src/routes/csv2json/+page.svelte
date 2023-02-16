@@ -1,6 +1,9 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import Button, { Label } from '@smui/button';
 	import csv from 'csvtojson';
+	import { onMount } from 'svelte';
+	import { activePath } from '../../lib/store';
 
 	function getNow() {
 		const now = new Date();
@@ -48,6 +51,10 @@
 			reader.readAsText(file);
 		}
 	}
+
+	onMount(() => {
+		activePath.set(`${base}/csv2json/`);
+	});
 </script>
 
 <svelte:head>
