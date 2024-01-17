@@ -11,6 +11,10 @@
 	$error: color-palette.$red-700
 );
 
+@use '@smui/snackbar/style' as smui-snackabar;
+@use '@material/snackbar/mixins' as snackbar;
+@use '@material/theme/theme-color';
+
 html,
 body {
 	background-color: #000;
@@ -35,4 +39,9 @@ a:visited {
 }
 .card-list-item:hover {
 	background-color: #ececec;
+}
+
+.mdc-snackbar.snackbar-error {
+	@include snackbar.fill-color(color-palette.$red-500);
+	@include snackbar.label-ink-color(theme-color.accessible-ink-color(color-palette.$red-500));
 }

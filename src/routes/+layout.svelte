@@ -80,6 +80,14 @@
 						<Text>IMG2BASE64</Text>
 					</Item>
 				</List>
+				<List>
+					<Item
+						on:click={() => setActive(`${base}/sitemap/`)}
+						activated={active === `${base}/sitemap/`}
+					>
+						<Text>High Level Sitemap Builder</Text>
+					</Item>
+				</List>
 			</Content>
 		</Drawer>
 		<Scrim fixed={false} />

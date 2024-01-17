@@ -11,11 +11,15 @@
 			description: 'Convert a CSV file to a JSON File',
 			href: `${base}/csv2json`
 		},
-
 		{
 			name: 'IMG2BASE64',
 			description: 'Convert a Image file to a Base64 String',
 			href: `${base}/img2base64`
+		},
+		{
+			name: 'High Level Sitemap Builder',
+			description: 'CSV file to High Level Sitemap',
+			href: `${base}/sitemap`
 		}
 	];
 
