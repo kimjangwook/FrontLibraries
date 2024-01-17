@@ -26,7 +26,7 @@
 	};
 
 	let info: SitemapPathInfo = {
-		domain: 'www.sato-global.com',
+		domain: '',
 		paths: []
 	};
 
