@@ -26,7 +26,7 @@
 	};
 
 	let info: SitemapPathInfo = {
-		domain: '',
+		domain: 'www.sato-global.com',
 		paths: []
 	};
 
@@ -108,6 +108,13 @@
 					return a.path > b.path ? 1 : -1;
 				});
 
+				info.paths = info.paths.map((path) => {
+					path.pages = Array.from(new Set(path.pages));
+					return path;
+				});
+
+				// console.log(info.paths);
+
 				done = true;
 
 				// const now = getNow();
@@ -132,16 +139,19 @@
 	function exportFile() {
 		const parsedPaths = info.paths.map((p) => {
 			const row: any = {
-				'Full Path': p.path,
-				'# of Pages': p.pages.length
+				'Full Path': p.path
 			};
 			for (let i = 0; i < maxLength; i++) {
 				if (i != 0) {
-					row[`Path ${i}`] = p.pathList[i] || '';
+					if (i == p.pathList.length - 1) {
+						row[`Path ${i}`] = p.pathList[i] || '';
+					} else {
+						row[`Path ${i}`] = '';
+					}
 				}
 			}
 
-			console.log(row);
+			row['# of Pages'] = p.pages.length;
 			return row;
 		});
 		const ws = utils.json_to_sheet(parsedPaths);
@@ -191,17 +201,22 @@
 </section>
 
 {#if done}
+	<div style="margin-top: 50px; margin-bottom: 20px; text-align: right;">
+		<Button on:click={exportFile} color="secondary" variant="unelevated">
+			<Label>Export</Label>
+		</Button>
+	</div>
 	<section class="grid-1" style="margin-top: 50px;">
-		<DataTable stickyHeader style="width: 100%; max-height: 30vh; overflow: auto;">
+		<DataTable stickyHeader style="width: 100%; overflow-x: auto;">
 			<Head>
 				<Row>
 					<Cell>Full Path</Cell>
-					<Cell numeric># of Pages</Cell>
 					{#each Array(maxLength) as _, i}
 						{#if i != 0}
 							<Cell>Path {i}</Cell>
 						{/if}
 					{/each}
+					<Cell numeric># of Pages</Cell>
 				</Row>
 			</Head>
 
@@ -209,21 +224,20 @@
 				{#each info.paths as path, pathIdx}
 					<Row>
 						<Cell>{path.path}</Cell>
-						<Cell numeric>{path.pages.length}</Cell>
 						{#each Array(maxLength) as _, i}
 							{#if i != 0}
-								<Cell>{path.pathList[i] || ''}</Cell>
+								{#if i == path.pathList.length - 1}
+									<Cell>{path.pathList[i] || ''}</Cell>
+								{:else}
+									<Cell />
+								{/if}
 							{/if}
 						{/each}
+						<Cell numeric>{path.pages.length}</Cell>
 					</Row>
 				{/each}
 			</Body>
 		</DataTable>
-		<div style="margin-top: 20px; text-align: right;">
-			<Button on:click={exportFile} color="secondary" variant="unelevated">
-				<Label>Export</Label>
-			</Button>
-		</div>
 	</section>
 {/if}
 
